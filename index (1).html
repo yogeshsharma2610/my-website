@@ -1,0 +1,1855 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Kisan Sarthi | Smart Procurement Portal</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- 
+         LOGIN PAGE
+     -->
+
+    <section id="loginPage" class="login-page">
+
+        <!-- LEFT SIDE -->
+        <div class="login-hero">
+
+            <div class="hero-overlay"></div>
+
+            <div class="hero-content">
+
+                <!-- LOGO -->
+                <div class="brand">
+
+                    <img src="photo/logo.png" alt="Kisan Sarthi Logo">
+
+                    <div>
+                        <h1>Kisan <span>Sarthi</span></h1>
+
+                        <p>
+                            Smart Procurement, Happy Farmer
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <!-- HERO TEXT -->
+
+                <div class="hero-copy">
+
+                    <span class="eyebrow">
+                        🌾 DIGITAL FARMER SERVICES
+                    </span>
+
+                    <h2>
+                        One Platform for all your
+                        <span>Procurement</span> Needs
+                    </h2>
+
+                    <p>
+                        Book slots, track queues, receive notifications
+                        and monitor procurement and payment status
+                        from one simple portal.
+                    </p>
+
+                </div>
+
+
+                <!-- FEATURES -->
+
+                <div class="hero-features">
+
+                    <div class="hero-feature">
+
+                        <i class="fa-solid fa-calendar-check"></i>
+
+                        <div>
+                            <b>Easy Slot Booking</b>
+                            <small>Choose your procurement date</small>
+                        </div>
+
+                    </div>
+
+
+                    <div class="hero-feature">
+
+                        <i class="fa-solid fa-list-ol"></i>
+
+                        <div>
+                            <b>Live Queue</b>
+                            <small>Know your waiting position</small>
+                        </div>
+
+                    </div>
+
+
+                    <div class="hero-feature">
+
+                        <i class="fa-solid fa-bell"></i>
+
+                        <div>
+                            <b>Instant Updates</b>
+                            <small>Get important alerts on time</small>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- RIGHT SIDE -->
+
+        <div class="login-area">
+
+            <div class="login-card">
+
+                <div class="login-heading">
+
+                    <span class="mini-leaf">🌿</span>
+
+                    <h2>
+                        Welcome Back!
+                    </h2>
+
+                    <p>
+                        Login to continue to your farmer account
+                    </p>
+
+                </div>
+
+
+                <!-- LOGIN FORM -->
+
+                <form id="loginForm">
+
+                    <!-- MOBILE -->
+
+                    <label for="mobile">
+                        Mobile Number
+                    </label>
+
+                    <div class="input-box">
+
+                        <i class="fa-solid fa-phone"></i>
+
+                        <input id="mobile" type="tel" maxlength="10" placeholder="Enter 10-digit mobile number">
+
+                    </div>
+
+                    <small id="mobileError" class="error"></small>
+
+
+                    <!-- PASSWORD -->
+
+                    <label for="password">
+                        Password
+                    </label>
+
+                    <div class="input-box">
+
+                        <i class="fa-solid fa-lock"></i>
+
+                        <input id="password" type="password" placeholder="Enter your password">
+
+                        <button type="button" id="togglePassword" class="icon-button">
+
+                            <i class="fa-regular fa-eye-slash"></i>
+
+                        </button>
+
+                    </div>
+
+                    <small id="passwordError" class="error"></small>
+
+
+                    <!-- FORGOT PASSWORD -->
+
+                    <div class="forgot-row">
+
+                        <a href="#" id="forgotPassword">
+                            Forgot Password?
+                        </a>
+
+                    </div>
+
+
+                    <!-- LOGIN BUTTON -->
+
+                    <button class="primary-btn" type="submit">
+
+                        <i class="fa-solid fa-right-to-bracket"></i>
+
+                        Login
+
+                    </button>
+
+                </form>
+
+
+                <!-- OR -->
+
+                <div class="or">
+
+                    <span></span>
+
+                    <b>OR</b>
+
+                    <span></span>
+
+                </div>
+
+
+                <!-- OTP LOGIN -->
+
+                <button id="otpLogin" class="otp-button" type="button">
+
+                    <span class="otp-icon">
+
+                        <i class="fa-regular fa-comment"></i>
+
+                    </span>
+
+                    <span>
+
+                        <strong>
+                            Login with OTP
+                        </strong>
+
+                        <small>
+                            We'll send a one-time password
+                        </small>
+
+                    </span>
+
+                    <i class="fa-solid fa-chevron-right"></i>
+
+                </button>
+
+
+                <!-- REGISTER -->
+
+                <p class="register-text">
+
+                    Don't have an account?
+
+                    <a href="#" id="registerLink">
+                        Register Now
+                    </a>
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- 
+         FARMER PORTAL
+    -->
+
+    <section id="portalPage" class="portal-page hidden">
+
+
+        <!-- TOP NAVBAR -->
+
+        <header class="topbar">
+
+            <div class="brand compact">
+
+                <img src="photo/logo.png" alt="Kisan Sarthi">
+
+                <div>
+
+                    <h1>
+                        Kisan <span>Sarthi</span>
+                    </h1>
+
+                    <small>
+                        Smart Procurement, Happy Farmer
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <div class="top-actions">
+
+                <!-- Notification -->
+
+                <button id="notificationBtn" class="round-btn">
+
+                    <i class="fa-regular fa-bell"></i>
+
+                    <span class="notification-dot"></span>
+
+                </button>
+
+
+                <!-- User -->
+
+                <div class="user-chip">
+
+                    <div class="avatar">
+                        S
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Suraj Kumar
+                        </strong>
+
+                        <small>
+                            Farmer
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Logout -->
+
+                <button id="logoutBtn" class="logout-btn">
+
+                    <i class="fa-solid fa-right-from-bracket"></i>
+
+                    Logout
+
+                </button>
+
+            </div>
+
+        </header>
+
+
+        <!-- PORTAL LAYOUT -->
+
+        <div class="portal-layout">
+
+
+            <!-- SIDEBAR -->
+
+            <aside class="sidebar">
+
+                <div class="side-title">
+                    MAIN MENU
+                </div>
+
+
+                <button class="nav-item active" data-section="dashboard">
+
+                    <i class="fa-solid fa-house"></i>
+
+                    Dashboard
+
+                </button>
+
+
+                <button class="nav-item" data-section="booking">
+
+                    <i class="fa-solid fa-calendar-check"></i>
+
+                    Book Slot
+
+                </button>
+
+
+                <button class="nav-item" data-section="queue">
+
+                    <i class="fa-solid fa-list-ol"></i>
+
+                    My Queue
+
+                </button>
+
+
+                <button class="nav-item" data-section="status">
+
+                    <i class="fa-solid fa-chart-line"></i>
+
+                    Procurement Status
+
+                </button>
+
+
+                <button class="nav-item" data-section="payment">
+
+                    <i class="fa-solid fa-indian-rupee-sign"></i>
+
+                    Payment Status
+
+                </button>
+
+
+                <button class="nav-item" data-section="notifications">
+
+                    <i class="fa-regular fa-bell"></i>
+
+                    Notifications
+
+                    <span class="side-badge">
+                        3
+                    </span>
+
+                </button>
+
+
+                <div class="side-title lower">
+                    ACCOUNT
+                </div>
+
+
+                <button class="nav-item" data-section="profile">
+
+                    <i class="fa-regular fa-user"></i>
+
+                    My Profile
+
+                </button>
+
+
+                <button class="nav-item" data-section="help">
+
+                    <i class="fa-solid fa-circle-question"></i>
+
+                    Help & Support
+
+                </button>
+
+            </aside>
+
+
+            <!-- MAIN CONTENT -->
+
+            <main class="main-content">
+
+
+                <!-- 
+                     DASHBOARD
+               -->
+
+                <div id="dashboard" class="content-section active-section">
+
+                    <div class="welcome-row">
+
+                        <div>
+
+                            <span class="eyebrow green">
+                                FARMER DASHBOARD
+                            </span>
+
+                            <h2>
+                                Welcome back, Suraj! 👋
+                            </h2>
+
+                            <p>
+                                Here is the latest update about
+                                your procurement journey.
+                            </p>
+
+                        </div>
+
+
+                        <button class="primary-btn small" data-go="booking">
+
+                            <i class="fa-solid fa-plus"></i>
+
+                            Book New Slot
+
+                        </button>
+
+                    </div>
+
+
+                    <!-- STAT CARDS -->
+
+                    <div class="stats-grid">
+
+
+                        <div class="stat-card green-card">
+
+                            <div class="stat-icon">
+
+                                <i class="fa-solid fa-calendar-check"></i>
+
+                            </div>
+
+                            <div>
+
+                                <small>
+                                    Upcoming Slot
+                                </small>
+
+                                <h3>
+                                    18 Sep 2026
+                                </h3>
+
+                                <span>
+                                    10:30 AM
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="stat-card blue-card">
+
+                            <div class="stat-icon">
+
+                                <i class="fa-solid fa-list-ol"></i>
+
+                            </div>
+
+                            <div>
+
+                                <small>
+                                    Queue Position
+                                </small>
+
+                                <h3 id="dashQueue">
+                                    12
+                                </h3>
+
+                                <span>
+                                    Farmers ahead
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="stat-card orange-card">
+
+                            <div class="stat-icon">
+
+                                <i class="fa-solid fa-wheat-awn"></i>
+
+                            </div>
+
+                            <div>
+
+                                <small>
+                                    Crop
+                                </small>
+
+                                <h3>
+                                    Wheat
+                                </h3>
+
+                                <span>
+                                    120 Quintals
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="stat-card purple-card">
+
+                            <div class="stat-icon">
+
+                                <i class="fa-solid fa-indian-rupee-sign"></i>
+
+                            </div>
+
+                            <div>
+
+                                <small>
+                                    Payment
+                                </small>
+
+                                <h3>
+                                    ₹42,500
+                                </h3>
+
+                                <span>
+                                    Processing
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- DASHBOARD PANELS -->
+
+                    <div class="dashboard-grid">
+
+
+                        <!-- QUEUE -->
+
+                        <div class="panel">
+
+                            <div class="panel-head">
+
+                                <div>
+
+                                    <h3>
+                                        Today's Procurement Queue
+                                    </h3>
+
+                                    <p>
+                                        Your live position at the centre
+                                    </p>
+
+                                </div>
+
+                                <span class="live">
+                                    <i></i> LIVE
+                                </span>
+
+                            </div>
+
+
+                            <div class="queue-visual">
+
+                                <div class="queue-number" id="queueNumber">
+
+                                    12
+
+                                </div>
+
+                                <div>
+
+                                    <strong>
+                                        Your Queue Position
+                                    </strong>
+
+                                    <p>
+                                        Estimated waiting time:
+                                        <b id="waitTime">
+                                            48 minutes
+                                        </b>
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="progress-wrap">
+
+                                <div class="progress-label">
+
+                                    <span>
+                                        Queue Progress
+                                    </span>
+
+                                    <b id="queueProgressText">
+                                        65%
+                                    </b>
+
+                                </div>
+
+                                <div class="progress">
+
+                                    <span id="queueProgress" style="width:65%">
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                            <button class="outline-btn" data-go="queue">
+
+                                View Full Queue
+
+                            </button>
+
+                        </div>
+
+
+                        <!-- NOTIFICATIONS -->
+
+                        <div class="panel">
+
+                            <div class="panel-head">
+
+                                <div>
+
+                                    <h3>
+                                        Latest Notifications
+                                    </h3>
+
+                                    <p>
+                                        Important updates for you
+                                    </p>
+
+                                </div>
+
+                                <button class="text-btn" data-go="notifications">
+
+                                    View all
+
+                                </button>
+
+                            </div>
+
+
+                            <div class="notification-list">
+
+
+                                <div class="notice unread">
+
+                                    <i class="fa-solid fa-calendar-check"></i>
+
+                                    <div>
+
+                                        <b>
+                                            Slot Confirmed
+                                        </b>
+
+                                        <p>
+                                            Your slot for 18 Sep
+                                            is confirmed.
+                                        </p>
+
+                                        <small>
+                                            10 min ago
+                                        </small>
+
+                                    </div>
+
+                                </div>
+
+
+                                <div class="notice unread">
+
+                                    <i class="fa-solid fa-truck-fast"></i>
+
+                                    <div>
+
+                                        <b>
+                                            Centre Update
+                                        </b>
+
+                                        <p>
+                                            Procurement is running
+                                            on schedule.
+                                        </p>
+
+                                        <small>
+                                            1 hour ago
+                                        </small>
+
+                                    </div>
+
+                                </div>
+
+
+                                <div class="notice">
+
+                                    <i class="fa-solid fa-indian-rupee-sign"></i>
+
+                                    <div>
+
+                                        <b>
+                                            Payment Update
+                                        </b>
+
+                                        <p>
+                                            Your payment is being processed.
+                                        </p>
+
+                                        <small>
+                                            Yesterday
+                                        </small>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- PROCUREMENT JOURNEY -->
+
+                    <div class="panel journey">
+
+                        <div class="panel-head">
+
+                            <div>
+
+                                <h3>
+                                    Your Procurement Journey
+                                </h3>
+
+                                <p>
+                                    Track every step from booking to payment
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="steps">
+
+
+                            <div class="step done">
+
+                                <span>
+                                    <i class="fa-solid fa-check"></i>
+                                </span>
+
+                                <b>
+                                    Slot Booked
+                                </b>
+
+                                <small>
+                                    16 Sep
+                                </small>
+
+                            </div>
+
+
+                            <div class="line done"></div>
+
+
+                            <div class="step active">
+
+                                <span>
+                                    <i class="fa-solid fa-users"></i>
+                                </span>
+
+                                <b>
+                                    In Queue
+                                </b>
+
+                                <small>
+                                    Current
+                                </small>
+
+                            </div>
+
+
+                            <div class="line"></div>
+
+
+                            <div class="step">
+
+                                <span>
+                                    <i class="fa-solid fa-scale-balanced"></i>
+                                </span>
+
+                                <b>
+                                    Procurement
+                                </b>
+
+                                <small>
+                                    Pending
+                                </small>
+
+                            </div>
+
+
+                            <div class="line"></div>
+
+
+                            <div class="step">
+
+                                <span>
+                                    <i class="fa-solid fa-indian-rupee-sign"></i>
+                                </span>
+
+                                <b>
+                                    Payment
+                                </b>
+
+                                <small>
+                                    Pending
+                                </small>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- 
+                     BOOK SLOT
+               -->
+
+                <div id="booking" class="content-section">
+
+                    <div class="page-title">
+
+                        <span class="eyebrow green">
+                            SLOT MANAGEMENT
+                        </span>
+
+                        <h2>
+                            Book Procurement Slot
+                        </h2>
+
+                        <p>
+                            Select your crop, centre, date and preferred time.
+                        </p>
+
+                    </div>
+
+
+                    <div class="form-panel">
+
+                        <form id="bookingForm" class="portal-form">
+
+
+                            <div class="form-grid">
+
+
+                                <div class="field">
+
+                                    <label>
+                                        Crop Type
+                                    </label>
+
+                                    <select id="crop">
+
+                                        <option>
+                                            Wheat
+                                        </option>
+
+                                        <option>
+                                            Rice
+                                        </option>
+
+                                        <option>
+                                            Maize
+                                        </option>
+
+                                        <option>
+                                            Mustard
+                                        </option>
+
+                                        <option>
+                                            Barley
+                                        </option>
+
+                                    </select>
+
+                                </div>
+
+
+                                <div class="field">
+
+                                    <label>
+                                        Quantity (Quintals)
+                                    </label>
+
+                                    <input id="quantity" type="number" min="1" value="120">
+
+                                </div>
+
+
+                                <div class="field">
+
+                                    <label>
+                                        Procurement Centre
+                                    </label>
+
+                                    <select id="centre">
+
+                                        <option>
+                                            Haldwani Procurement Centre
+                                        </option>
+
+                                        <option>
+                                            Gaulapar Procurement Centre
+                                        </option>
+
+                                        <option>
+                                            Lalkuan Procurement Centre
+                                        </option>
+
+                                    </select>
+
+                                </div>
+
+
+                                <div class="field">
+
+                                    <label>
+                                        Preferred Date
+                                    </label>
+
+                                    <input id="slotDate" type="date">
+
+                                </div>
+
+
+                                <div class="field">
+
+                                    <label>
+                                        Preferred Time
+                                    </label>
+
+                                    <select id="slotTime">
+
+                                        <option>
+                                            09:00 AM - 10:00 AM
+                                        </option>
+
+                                        <option>
+                                            10:00 AM - 11:00 AM
+                                        </option>
+
+                                        <option>
+                                            11:00 AM - 12:00 PM
+                                        </option>
+
+                                        <option>
+                                            02:00 PM - 03:00 PM
+                                        </option>
+
+                                    </select>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="booking-note">
+
+                                <i class="fa-solid fa-circle-info"></i>
+
+                                <span>
+                                    Booking a slot helps reduce waiting
+                                    time and crowding at the procurement centre.
+                                </span>
+
+                            </div>
+
+
+                            <button class="primary-btn" type="submit">
+
+                                <i class="fa-solid fa-calendar-check"></i>
+
+                                Confirm Slot
+
+                            </button>
+
+                        </form>
+
+                    </div>
+
+
+                    <!-- CURRENT SLOT -->
+
+                    <div class="panel">
+
+                        <div class="panel-head">
+
+                            <div>
+
+                                <h3>
+                                    My Upcoming Slot
+                                </h3>
+
+                                <p>
+                                    Your currently scheduled procurement visit
+                                </p>
+
+                            </div>
+
+                            <span class="status-pill success">
+                                Confirmed
+                            </span>
+
+                        </div>
+
+
+                        <div class="booking-summary">
+
+
+                            <div>
+
+                                <small>
+                                    Date
+                                </small>
+
+                                <b id="summaryDate">
+                                    18 September 2026
+                                </b>
+
+                            </div>
+
+
+                            <div>
+
+                                <small>
+                                    Time
+                                </small>
+
+                                <b>
+                                    10:30 AM
+                                </b>
+
+                            </div>
+
+
+                            <div>
+
+                                <small>
+                                    Crop
+                                </small>
+
+                                <b id="summaryCrop">
+                                    Wheat
+                                </b>
+
+                            </div>
+
+
+                            <div>
+
+                                <small>
+                                    Centre
+                                </small>
+
+                                <b id="summaryCentre">
+                                    Haldwani Procurement Centre
+                                </b>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!--
+                     QUEUE
+            -->
+                <div id="queue" class="content-section">
+
+                    <div class="page-title">
+
+                        <span class="eyebrow green">
+                            LIVE TRACKING
+                        </span>
+
+                        <h2>
+                            My Queue
+                        </h2>
+
+                        <p>
+                            Track your position and estimated waiting time.
+                        </p>
+
+                    </div>
+
+
+                    <div class="queue-big panel">
+
+                        <div class="queue-circle">
+
+                            <strong id="bigQueue">
+                                12
+                            </strong>
+
+                            <span>
+                                Position
+                            </span>
+
+                        </div>
+
+
+                        <div class="queue-info">
+
+                            <span class="live">
+                                <i></i>
+                                LIVE UPDATES
+                            </span>
+
+                            <h3>
+                                Haldwani Procurement Centre
+                            </h3>
+
+                            <p>
+                                There are
+                                <b id="aheadCount">
+                                    12 farmers
+                                </b>
+                                ahead of you.
+                            </p>
+
+
+                            <div class="progress">
+
+                                <span id="bigProgress" style="width:65%">
+                                </span>
+
+                            </div>
+
+
+                            <p class="estimate">
+
+                                Estimated waiting time:
+
+                                <b id="bigWait">
+                                    48 minutes
+                                </b>
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="panel">
+
+                        <div class="panel-head">
+
+                            <div>
+
+                                <h3>
+                                    Queue Instructions
+                                </h3>
+
+                                <p>
+                                    Keep these things ready before your turn
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="instruction-grid">
+
+
+                            <div>
+
+                                <i class="fa-solid fa-id-card"></i>
+
+                                <b>
+                                    Farmer ID
+                                </b>
+
+                                <span>
+                                    Keep your registration details ready.
+                                </span>
+
+                            </div>
+
+
+                            <div>
+
+                                <i class="fa-solid fa-wheat-awn"></i>
+
+                                <b>
+                                    Crop Details
+                                </b>
+
+                                <span>
+                                    Bring the crop and quantity details.
+                                </span>
+
+                            </div>
+
+
+                            <div>
+
+                                <i class="fa-solid fa-mobile-screen-button"></i>
+
+                                <b>
+                                    Phone
+                                </b>
+
+                                <span>
+                                    Keep your registered mobile active.
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- 
+                     PROCUREMENT STATUS
+               -->
+
+                <div id="status" class="content-section">
+
+                    <div class="page-title">
+
+                        <span class="eyebrow green">
+                            PROCUREMENT
+                        </span>
+
+                        <h2>
+                            Procurement Status
+                        </h2>
+
+                        <p>
+                            See the current status of your crop procurement.
+                        </p>
+
+                    </div>
+
+
+                    <div class="status-card panel">
+
+                        <div class="status-header">
+
+                            <div class="crop-avatar">
+                                🌾
+                            </div>
+
+                            <div>
+
+                                <h3>
+                                    Wheat Procurement
+                                </h3>
+
+                                <p>
+                                    120 Quintals • Haldwani Procurement Centre
+                                </p>
+
+                            </div>
+
+                            <span class="status-pill warning">
+                                In Queue
+                            </span>
+
+                        </div>
+
+
+                        <div class="timeline">
+
+
+                            <div class="timeline-item done">
+
+                                <span>
+                                    <i class="fa-solid fa-check"></i>
+                                </span>
+
+                                <div>
+
+                                    <b>
+                                        Slot Booked
+                                    </b>
+
+                                    <small>
+                                        16 September 2026, 09:15 AM
+                                    </small>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="timeline-item active">
+
+                                <span>
+                                    <i class="fa-solid fa-users"></i>
+                                </span>
+
+                                <div>
+
+                                    <b>
+                                        Waiting in Queue
+                                    </b>
+
+                                    <small>
+                                        Your turn is approaching
+                                    </small>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="timeline-item">
+
+                                <span>
+                                    <i class="fa-solid fa-scale-balanced"></i>
+                                </span>
+
+                                <div>
+
+                                    <b>
+                                        Crop Procurement
+                                    </b>
+
+                                    <small>
+                                        Will start after your turn
+                                    </small>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="timeline-item">
+
+                                <span>
+                                    <i class="fa-solid fa-indian-rupee-sign"></i>
+                                </span>
+
+                                <div>
+
+                                    <b>
+                                        Payment
+                                    </b>
+
+                                    <small>
+                                        Payment will be processed
+                                        after procurement
+                                    </small>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =================================================
+                     PAYMENT
+                ================================================== -->
+
+                <div id="payment" class="content-section">
+
+                    <div class="page-title">
+
+                        <span class="eyebrow green">
+                            PAYMENT TRACKING
+                        </span>
+
+                        <h2>
+                            Payment Status
+                        </h2>
+
+                        <p>
+                            Track your expected and completed payments.
+                        </p>
+
+                    </div>
+
+
+                    <div class="payment-hero panel">
+
+                        <div>
+
+                            <small>
+                                Expected Payment
+                            </small>
+
+                            <h2>
+                                ₹42,500
+                            </h2>
+
+                            <p>
+                                Based on current procurement details
+                            </p>
+
+                        </div>
+
+
+                        <div class="payment-icon">
+
+                            <i class="fa-solid fa-indian-rupee-sign"></i>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="stats-grid two">
+
+
+                        <div class="stat-card">
+
+                            <div class="stat-icon green">
+
+                                <i class="fa-solid fa-hourglass-half"></i>
+
+                            </div>
+
+                            <div>
+
+                                <small>
+                                    Current Status
+                                </small>
+
+                                <h3>
+                                    Processing
+                                </h3>
+
+                                <span>
+                                    Awaiting procurement
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="stat-card">
+
+                            <div class="stat-icon green">
+
+                                <i class="fa-solid fa-building-columns"></i>
+
+                            </div>
+
+                            <div>
+
+                                <small>
+                                    Payment Method
+                                </small>
+
+                                <h3>
+                                    Bank Transfer
+                                </h3>
+
+                                <span>
+                                    Registered account
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- 
+                     NOTIFICATIONS
+              -->
+
+                <div id="notifications" class="content-section">
+
+                    <div class="page-title">
+
+                        <span class="eyebrow green">
+                            UPDATES
+                        </span>
+
+                        <h2>
+                            Notifications
+                        </h2>
+
+                        <p>
+                            Stay updated about your slots,
+                            queue and payments.
+                        </p>
+
+                    </div>
+
+
+                    <div class="panel notification-page">
+
+
+                        <div class="notice full unread">
+
+                            <i class="fa-solid fa-calendar-check"></i>
+
+                            <div>
+
+                                <b>
+                                    Slot Confirmed
+                                </b>
+
+                                <p>
+                                    Your procurement slot for
+                                    18 September 2026 at 10:30 AM
+                                    has been confirmed.
+                                </p>
+
+                                <small>
+                                    Today, 10:20 AM
+                                </small>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="notice full unread">
+
+                            <i class="fa-solid fa-users"></i>
+
+                            <div>
+
+                                <b>
+                                    Queue Update
+                                </b>
+
+                                <p>
+                                    You are currently at queue
+                                    position 12. Estimated waiting
+                                    time is 48 minutes.
+                                </p>
+
+                                <small>
+                                    Today, 10:05 AM
+                                </small>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="notice full unread">
+
+                            <i class="fa-solid fa-bullhorn"></i>
+
+                            <div>
+
+                                <b>
+                                    Centre Announcement
+                                </b>
+
+                                <p>
+                                    Procurement operations are
+                                    running according to today's schedule.
+                                </p>
+
+                                <small>
+                                    Today, 9:30 AM
+                                </small>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="notice full">
+
+                            <i class="fa-solid fa-indian-rupee-sign"></i>
+
+                            <div>
+
+                                <b>
+                                    Payment Update
+                                </b>
+
+                                <p>
+                                    Your estimated payment is ₹42,500
+                                    and will be processed after procurement.
+                                </p>
+
+                                <small>
+                                    Yesterday
+                                </small>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!--
+                     PROFILE
+               -->
+
+                <div id="profile" class="content-section">
+
+                    <div class="page-title">
+
+                        <span class="eyebrow green">
+                            ACCOUNT
+                        </span>
+
+                        <h2>
+                            My Profile
+                        </h2>
+
+                        <p>
+                            View your registered farmer information.
+                        </p>
+
+                    </div>
+
+
+                    <div class="profile-panel panel">
+
+                        <div class="profile-head">
+
+                            <div class="large-avatar">
+                                S
+                            </div>
+
+                            <div>
+
+                                <h3>
+                                    Suraj Kumar
+                                </h3>
+
+                                <p>
+                                    Registered Farmer
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="profile-grid">
+
+
+                            <div>
+
+                                <small>
+                                    Mobile Number
+                                </small>
+
+                                <b>
+                                    +91 98XXXXXX10
+                                </b>
+
+                            </div>
+
+
+                            <div>
+
+                                <small>
+                                    Farmer ID
+                                </small>
+
+                                <b>
+                                    KS-2026-00124
+                                </b>
+
+                            </div>
+
+
+                            <div>
+
+                                <small>
+                                    Village
+                                </small>
+
+                                <b>
+                                    Haldwani
+                                </b>
+
+                            </div>
+
+
+                            <div>
+
+                                <small>
+                                    District
+                                </small>
+
+                                <b>
+                                    Nainital
+                                </b>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+               
+
+
+    <!-- NOTIFICATION POPUP -->
+
+    <div id="notificationPanel" class="notification-pop hidden">
+
+        <div class="pop-head">
+
+            <b>
+                Notifications
+            </b>
+
+            <button id="closeNotifications">
+                ×
+            </button>
+
+        </div>
+
+
+        <p>
+            <i class="fa-solid fa-calendar-check"></i>
+            Your slot is confirmed.
+        </p>
+
+        <p>
+            <i class="fa-solid fa-users"></i>
+            Queue position updated to 12.
+        </p>
+
+        <p>
+            <i class="fa-solid fa-indian-rupee-sign"></i>
+            Payment status: Processing.
+        </p>
+
+    </div>
+
+
+    <!-- TOAST -->
+
+    <div id="toast" class="toast">
+
+        <i class="fa-solid fa-circle-check"></i>
+
+        <span id="toastMessage"></span>
+
+    </div>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
